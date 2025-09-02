@@ -15,17 +15,20 @@ export default function App() {
 
   return (
 <div className="app">
-      {/* Navbar */}
+
       <nav className="navbar">
+        <div style={{display:'flex',justifyContent:'space-between'}}>
+        
         <h1 className="logo">MyPortfolio</h1>
 
-        {/* Hamburger Button */}
         <button
           className="menu-btn"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
+
+        </div>
 
         <div className={`nav-links ${menuOpen ? "active" : ""}`}>
           <a href="#" onClick={() => setMenuOpen(false)}>Home</a>
@@ -144,23 +147,66 @@ export default function App() {
 
       {/* Projects Section */}
       <section id="projects" className="section projects">
-        <h2>Projects</h2>
-        <div className="project-grid">
-          {["Portfolio Website", "Chat App", "Music Player"].map((project, i) => (
-            <motion.div
-              className="project-card"
-              key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: i * 0.2 }}
-            >
-              <h3>{project}</h3>
-              <p>A brief description of {project}.</p>
-              <div className="video"></div>
-            </motion.div>
-          ))}
+  <h2>Projects</h2>
+  <div className="project-grid">
+    {[
+      { 
+        title: "Portfolio Website", 
+        desc: `A responsive and modern portfolio website built using React, 
+        Tailwind CSS, and Framer Motion animations. It includes smooth scrolling, 
+        interactive UI components, and a fully optimized responsive design for 
+        both desktop and mobile users. The site highlights my skills, projects, 
+        and achievements while maintaining fast performance and SEO optimization.`,
+        video: "/port.mp4"
+      },
+      { 
+        title: "Chat App", 
+        desc: `A real-time chat application developed with React, Node.js, 
+        Express, and Socket.io. It allows users to create rooms, send instant 
+        messages, and get typing indicators. Messages are stored in MongoDB for 
+        persistence, and authentication is implemented with JWT. The app is 
+        optimized for fast performance and smooth user experience across devices.`,
+        video: "/chatapp.mp4" 
+      },
+      { 
+        title: "Music Player", 
+        desc: `A full-featured music player inspired by Spotify, built with React, 
+        Context API, and custom audio controls. Users can create and manage 
+        playlists, play/pause songs, and switch tracks seamlessly. LocalStorage 
+        is used to save playlists, and the UI is responsive with an elegant 
+        design. Videos autoplay in project previews to enhance interactivity.`,
+        video: "/spotify.mp4" 
+      }
+    ].map((project, i) => (
+      <motion.div
+        className="project-card"
+        key={i}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: i * 0.2 }}
+      >
+        <h3>{project.title}</h3>
+        <div className="video">
+          {project.video && (
+            <video
+              src={project.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{ width: "100%" }}
+            />
+          )}
         </div>
-      </section>
+        <br/>
+       <p>{project.desc}</p>
+
+
+      </motion.div>
+    ))}
+  </div>
+</section>
+
 
       {/* Contact Section */}
       <section id="contact" className="contact-section">

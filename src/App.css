@@ -172,12 +172,13 @@ body {
 }
 
 .project-card {
-  height: 330px;
+  height: 470px;
   width: 370px;
   background: #222;
   padding: 20px;
   border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s ;
+  line-height: 23px;
 }
 
 .project-card:hover,.project-card1:hover {
@@ -284,14 +285,12 @@ body {
 
 .project-card .video
 {
-  background-color: yellow;
   height: 200px;
   width: 100%;
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
 }
-
 
 .contact-section {
   background-color: #000;
