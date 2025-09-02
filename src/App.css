@@ -529,9 +529,20 @@ body {
     font-size: 2rem;
   }
 
+  .content p
+  {
+    margin-right: 75px;
+
+  }
+
+  .content .imagediv
+  {
+    margin-right: 130px;
+  }
+
   .project-card,
   .project-card1 {
-    width: 100%;
+    width: 75%;
     font-size: 0.9rem;
   }
 
