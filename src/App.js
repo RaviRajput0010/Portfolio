@@ -81,7 +81,7 @@ export default function App() {
     
       {/* About Section */}
       <section id="about" className="section" style={{ height: "auto", width: "100%" }}>
-        <div className="heading" style={{ height: "auto", width: "100%" }}>
+        <div className="heading" style={{ height: "auto", width: "90%" }}>
           <h2>About Me</h2>
         </div>
         <div className="content" style={{ height: "auto", width: "100%" }}>
