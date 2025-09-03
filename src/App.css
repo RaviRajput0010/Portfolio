@@ -497,8 +497,32 @@ body {
 }
 
 @media (max-width: 480px) {
+
+  .heading 
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skills
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .projects
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
   .hero h2 {
     font-size: 2rem;
+  
   }
 
   .hero p {
